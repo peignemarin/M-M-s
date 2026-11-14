@@ -1,0 +1,145 @@
+/* ===== Couleurs et polices (modifiables ici) ===== */
+:root {
+  --creme: #faf6ef;
+  --sable: #f0e8da;
+  --vert: #5f6f52;
+  --texte: #3b3a36;
+  --titre: "Cormorant Garamond", Georgia, serif;
+  --corps: "Inter", Helvetica, Arial, sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--corps);
+  font-weight: 300;
+  color: var(--texte);
+  background: var(--creme);
+  line-height: 1.7;
+}
+
+/* ===== Menu ===== */
+.menu {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: rgba(250, 246, 239, 0.95);
+  border-bottom: 1px solid var(--sable);
+}
+.menu-logo {
+  font-family: var(--titre);
+  font-size: 1.5rem;
+  color: var(--vert);
+  text-decoration: none;
+}
+.menu ul { display: flex; gap: 1.5rem; list-style: none; }
+.menu ul a {
+  color: var(--texte);
+  text-decoration: none;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.menu ul a:hover { color: var(--vert); }
+
+/* ===== Accueil ===== */
+.hero {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 4rem 1.5rem;
+}
+.hero-intro {
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  font-size: 0.8rem;
+  color: var(--vert);
+  margin-bottom: 1rem;
+}
+.hero h1 {
+  font-family: var(--titre);
+  font-weight: 400;
+  font-size: clamp(3rem, 9vw, 6rem);
+  line-height: 1.1;
+}
+.hero h1 span { font-style: italic; color: var(--vert); }
+.hero-date {
+  font-family: var(--titre);
+  font-size: 1.6rem;
+  margin-top: 1.5rem;
+}
+.hero-lieu { margin-bottom: 2.5rem; }
+
+/* ===== Bouton ===== */
+.bouton {
+  display: inline-block;
+  padding: 0.9rem 2rem;
+  border: 1px solid var(--vert);
+  color: var(--vert);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 0.8rem;
+  transition: all 0.2s;
+}
+.bouton:hover { background: var(--vert); color: var(--creme); }
+
+/* ===== Sections ===== */
+.section { padding: 5rem 1.5rem; text-align: center; }
+.section-claire { background: var(--sable); }
+.section h2 {
+  font-family: var(--titre);
+  font-weight: 400;
+  font-size: 2.6rem;
+  margin-bottom: 2.5rem;
+}
+.texte { max-width: 600px; margin: 0 auto 1.5rem; }
+
+/* ===== Cartes ===== */
+.cartes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.carte {
+  background: white;
+  padding: 2rem 1.5rem;
+  border-radius: 4px;
+}
+.carte h3 {
+  font-family: var(--titre);
+  font-weight: 600;
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+}
+.carte-heure {
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 0.75rem;
+  color: var(--vert);
+}
+
+/* ===== Pied de page ===== */
+.pied {
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.85rem;
+  color: var(--vert);
+}
+
+/* ===== Téléphone ===== */
+@media (max-width: 640px) {
+  .menu { flex-direction: column; gap: 0.5rem; padding: 0.8rem; }
+  .menu ul { gap: 1rem; flex-wrap: wrap; justify-content: center; }
+}
